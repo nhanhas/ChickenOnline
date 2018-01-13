@@ -1969,7 +1969,11 @@ $inputJson = '
 ';
 
 //#1 - Process Json data to prepare an object
-$serviceInput = processInputJson($inputJson);
+$orders = processInputJson($inputJson);
+
+
+print_r($orders);
+
 
 //# - Process JSON function
 function processInputJson($json){
@@ -1979,18 +1983,57 @@ function processInputJson($json){
 	//#1 - iterarte object throught Market Places: Cais Sodre, Amadora, etc
 	foreach($json->orders as $place){
 		//#2 - iterate through a single order
-		foreach ($place as $orderItem) {
-			print_r($orderItem->orderId . "<br>");
-		}
+		$customer = array();
+		$products = array();
 
-		print_r("_______<br>");	
+		foreach ($place as $orderItem) {
+			//#3 - in each orderItem we will get the product. Each orderItem has customer information
+			//#3.1 - get customer info 
+			$customer = array( 	'name' 		=> $orderItem->firstName . " " . $orderItem->lastName,
+								'email' 	=> $orderItem->username,
+								'ncont' 	=> $orderItem->extraInfo[0]->nif,
+								'zipcode' 	=> $orderItem->extraInfo[3]->postalCode,
+								'phone'		=> $orderItem->extraInfo[3]->phone,
+								'phone2'		=> $orderItem->extraInfo[3]->phone2,
+								'address'	=> $orderItem->extraInfo[3]->address . " " . $orderItem->extraInfo[3]->number,
+								'city'		=> $orderItem->extraInfo[3]->city
+			);
+
+			//#3.2 - get products 
+			$newProduct = processJsonProducts($orderItem);
+			$products[] = $newProduct;
+			
+		}
+		print_r($customer);
+		print_r($products);
+		
+		//#4 - Add to Order
+		$orders[] = array (
+			'customer' => $customer,
+			'products' => $products
+		);
+
 	}
 
-	//print_r($json->orders);
-
-
+	//return orders to main sincro life cycle
+	return $orders;
+	
 }
 
+//# return a single product
+function processJsonProducts($orderItem){
+	while (sizeof($orderItem->childs) > 0) {
+		$orderItem = $orderItem->childs[0];		
+	}	
 
+	$product = array(
+		'design'	=> $orderItem->title,
+		'price'		=> $orderItem->price,
+		'qtt'		=> $orderItem->count
+	);
+	
+	return $product;
+
+}
 
 ?>
