@@ -1,4 +1,7 @@
 <?php 
+//Get POST
+$inputJson = file_get_contents('php://input');
+
 error_reporting(E_ERROR | E_PARSE);
 
 //Define Drive FX settings
@@ -10,7 +13,7 @@ $_SESSION['driveCredentials'] = array(
 	applicationType=>"HYU45F-FKEIDD-K93DUJ-ALRNJE",
 	company=>""
 );
-
+define("toSign", false); //To Sign ?
 	
 //set as global Call HEADER for Drive fX
 $ch = curl_init();
@@ -31,7 +34,7 @@ if($loginResult == false){
 
 
 //json for test
-$inputJson = '
+/*$inputJson = '
 	{
 	  "orders": {
 	    "Cais Sodr?": [
@@ -1921,7 +1924,7 @@ $inputJson = '
 	  "status": "SUCCESS",
 	  "statusCode": 1
 	}
-';
+';*/
 
 //#1 - Process Json data to prepare an object
 $orders = processInputJson($inputJson);
@@ -2022,6 +2025,22 @@ function createInvoice($orderInfo, $customerDrive){
 		return null;
 	}
 
+
+	//#5 - Now depending on Config to Sign Document
+	if(toSign){
+		$msg = "Sign invoice...<br>";
+		echo $msg;
+		logData($msg);
+
+		$newInstanceFt = DRIVE_signDocument($newInstanceFt);
+		if($newInstanceFt == null){
+			$msg = "Error on Sign invoice Invoice. <br><br>";
+			echo $msg;
+			logData($msg);
+			return null;
+		}
+	}
+
 	return $newInstanceFt;
 
 }
@@ -2114,6 +2133,29 @@ function createCustomer($customer){
 	return $newInstanceCl;
 }
 
+//Sync entity Instance (Entity= Cl , Bo, St)
+function DRIVE_signDocument($itemVO){
+
+	global $ch;
+
+	$url = backendUrl . "/FtWS/signDocument";
+	$params =  array('ftstamp' => $itemVO['ftstamp']);
+
+	$response=DRIVE_Request($ch, $url, $params);
+
+	//echo json_encode( $response );
+	if(empty($response)){
+		return null;
+	}
+	if(isset($response['messages'][0]['messageCodeLocale'])  && $response["messages"][0]["messageCode"] != "messages.saft.export.dt.webservice.successful"){
+		$msg = $response['messages'][0]['messageCodeLocale'];
+		logData($msg);
+		return null;
+	}
+
+
+	return $response['result'][0];
+}
 
 //Get New Instance (Entity= Cl , Bo, St)
 function DRIVE_getNewInstance($entity, $ndos){
