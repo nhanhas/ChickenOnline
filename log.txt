@@ -158,3 +158,51 @@ Order with Id = 403899 - Already created, request to Print...<br>
 
 ----------------------2018-01-27 14:30:50----------------------
 Document printed!.<br><br>
+
+----------------------2018-01-27 18:32:36----------------------
+Starting Sync...<br>
+
+----------------------2018-01-27 18:32:36----------------------
+> Orders received to Sync: <br>[{"orderId":403899,"customer":{"name":"Jo?o Leite","email":"joao.oleite@hotmail.com","nif":"","zipcode":"1200-001","phone":"912202013","phone2":"","address":"Cais Sodr? 12","city":"Lisboa","userId":"155614"},"products":[{"ref":"001","design":"Frango simples","epv":8.5,"qtt":1,"ivaincl":true},{"ref":"002","design":"Frango c\/molho","epv":8.5,"qtt":1,"ivaincl":true}]}] <br><br>
+
+----------------------2018-01-27 18:32:36----------------------
+Order with Id = 403899 - Already created, request to Print...<br>
+
+----------------------2018-01-27 18:32:45----------------------
+Document printed!.<br><br>
+
+----------------------2018-01-27 18:42:39----------------------
+Starting Sync...<br>
+
+----------------------2018-01-27 18:42:39----------------------
+> Orders received to Sync: <br>[{"orderId":403899,"customer":{"name":"Jo?o Leite","email":"joao.oleite@hotmail.com","nif":"","zipcode":"1200-001","phone":"912202013","phone2":"","address":"Cais Sodr? 12","city":"Lisboa","userId":"155614"},"products":[{"ref":"001","design":"Frango simples","epv":8.5,"qtt":1,"ivaincl":true},{"ref":"002","design":"Frango c\/molho","epv":8.5,"qtt":1,"ivaincl":true}]}] <br><br>
+
+----------------------2018-01-27 18:42:40----------------------
+Order with Id = 403899 - synched with SUCCESS. Request to print...<br>
+
+----------------------2018-01-27 18:42:41----------------------
+Document printed!.<br><br>
+
+----------------------2018-01-27 18:43:35----------------------
+Starting Sync...<br>
+
+----------------------2018-01-27 18:43:35----------------------
+> Orders received to Sync: <br>[{"orderId":403899,"customer":{"name":"Jo?o Leite","email":"joao.oleite@hotmail.com","nif":"","zipcode":"1200-001","phone":"912202013","phone2":"","address":"Cais Sodr? 12","city":"Lisboa","userId":"155614"},"products":[{"ref":"001","design":"Frango simples","epv":8.5,"qtt":1,"ivaincl":true},{"ref":"002","design":"Frango c\/molho","epv":8.5,"qtt":1,"ivaincl":true}]}] <br><br>
+
+----------------------2018-01-27 18:43:35----------------------
+Order with Id = 403899 - Already created, request to Print...<br>
+
+----------------------2018-01-27 18:43:36----------------------
+Document printed!.<br><br>
+
+----------------------2018-01-27 18:45:52----------------------
+Starting Sync...<br>
+
+----------------------2018-01-27 18:45:52----------------------
+> Orders received to Sync: <br>[{"orderId":403899,"customer":{"name":"Jo?o Leite","email":"joao.oleite@hotmail.com","nif":"","zipcode":"1200-001","phone":"912202013","phone2":"","address":"Cais Sodr? 12","city":"Lisboa","userId":"155614"},"products":[{"ref":"001","design":"Frango simples","epv":8.5,"qtt":1,"ivaincl":true},{"ref":"002","design":"Frango c\/molho","epv":8.5,"qtt":1,"ivaincl":true}]}] <br><br>
+
+----------------------2018-01-27 18:45:53----------------------
+Order with Id = 403899 - Already created, request to Print...<br>
+
+----------------------2018-01-27 18:45:57----------------------
+Error on print document, Verify config of report and printer id.<br><br>

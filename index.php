@@ -6,16 +6,16 @@ error_reporting(E_ERROR | E_PARSE);
 
 //Define Drive FX settings
 define("orderNdoc", 1);
-define("backendUrl", "https://sis07.drivefx.net/2172d06c/PHCWS/REST");//TODO MUDAR AQUI 
+define("backendUrl", "https://sis07.drivefx.net/C47F5F38/PHCWS/REST");//TODO MUDAR AQUI 
 $_SESSION['driveCredentials'] = array(
-	userCode=>"admin",
+	userCode=>"suporte",
 	password=>"12345678",
 	applicationType=>"HYU45F-FKEIDD-K93DUJ-ALRNJE",
 	company=>""
 );
 define("toSign", false); //To Sign ?
-
-define("printerId", ''); //id of printer (stamp) -> POS-80 = 'fd05211d-add3-91c0-0a6c-a34483016f06'
+//2172d06c
+define("printerId", 'fd05211d-add3-91c0-0a6c-a34483016f06'); //id of printer (stamp) -> POS-80 = 'fd05211d-add3-91c0-0a6c-a34483016f06'
 define("repstamp", '12b-46df-8e74-7b428dd8905'); //stamp of report 'Impressao Talao' = '12b-46df-8e74-7b428dd8905'
 	
 //set as global Call HEADER for Drive fX
@@ -104,7 +104,7 @@ function printOrder($order){
 									  "emailConfig": {},
 									  "generateOnly": false,
 									  "isPreview": false,
-									  "outputType": 0,
+									  "outputType": 1,
 									  "printerId": "'.$printerId.'",
 									  "records": [
 									    {
