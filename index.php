@@ -665,7 +665,7 @@ function processJsonProducts($orderItem){
 		'ref'		=> $orderItem->plu,
 		'design'	=> $orderItem->title,
 		'epv'		=> $orderItem->price,
-		'qtt'		=> $orderItem->count,
+		'qtt'		=> isset($orderItem->count) ? $orderItem->count : 1,
 		'ivaincl'	=> true
 	);
 	
