@@ -6,7 +6,7 @@ error_reporting(E_ERROR | E_PARSE);
 
 //Define Drive FX settings
 define("orderNdoc", 1);
-define("backendUrl", "https://sis07.drivefx.net/C47F5F38/PHCWS/REST");//TODO MUDAR AQUI 
+define("backendUrl", "https://sis07.drivefx.net/2172d06c/PHCWS/REST");//TODO MUDAR AQUI 
 $_SESSION['driveCredentials'] = array(
 	userCode=>"suporte",
 	password=>"12345678",
@@ -321,7 +321,7 @@ function DRIVE_printDocument($options){
 	}
 
 
-	return $response['result'][0];
+	return true;
 }
 
 //Sync entity Instance (Entity= Cl , Bo, St)

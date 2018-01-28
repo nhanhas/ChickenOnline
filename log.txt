@@ -206,3 +206,15 @@ Order with Id = 403899 - Already created, request to Print...<br>
 
 ----------------------2018-01-27 18:45:57----------------------
 Error on print document, Verify config of report and printer id.<br><br>
+
+----------------------2018-01-27 18:56:12----------------------
+Starting Sync...<br>
+
+----------------------2018-01-27 18:56:12----------------------
+> Orders received to Sync: <br>[{"orderId":403899,"customer":{"name":"Jo?o Leite","email":"joao.oleite@hotmail.com","nif":"","zipcode":"1200-001","phone":"912202013","phone2":"","address":"Cais Sodr? 12","city":"Lisboa","userId":"155614"},"products":[{"ref":"001","design":"Frango simples","epv":8.5,"qtt":1,"ivaincl":true},{"ref":"002","design":"Frango c\/molho","epv":8.5,"qtt":1,"ivaincl":true}]}] <br><br>
+
+----------------------2018-01-27 18:56:12----------------------
+Order with Id = 403899 - Already created, request to Print...<br>
+
+----------------------2018-01-27 18:56:17----------------------
+Document printed!.<br><br>
