@@ -2,11 +2,12 @@
 //Get POST
 $inputJson = file_get_contents('php://input');
 
+
 error_reporting(E_ERROR | E_PARSE);
 
 //Define Drive FX settings
 define("orderNdoc", 1);
-define("backendUrl", "https://sis07.drivefx.net/2172d06c/PHCWS/REST");//TODO MUDAR AQUI 
+define("backendUrl", "https://sis07.drivefx.net/C47F5F38/PHCWS/REST");//TODO MUDAR AQUI //C47F5F38 - client
 $_SESSION['driveCredentials'] = array(
 	userCode=>"suporte",
 	password=>"12345678",
@@ -226,6 +227,17 @@ function processCustomer($customer){
 
 
 	//nao e preciso else porque tem return caso nao tenha nif e encontre o cl generico
+
+	//# - Validate nif
+	$isValidNif = validaNIF($customer['nif']);
+	if(!$isValidNif){
+		//if invalid, we dont create bue then, we acquire consumidor final
+		$driveCustomer = DRIVE_getCustomerFinal();
+		if($driveCustomer != null){
+			print_r("Using Consumidor final<br>");
+			return $driveCustomer;
+		}
+	}
 
 	//#1 - check if it already exists in Drive
 	if($customer['nif'] != '' || $customer['nif'] != null){
@@ -470,6 +482,47 @@ function DRIVE_saveInstance($entity, $itemVO){
 
 	 }
 
+//Call Drive to return a costumer with ncont
+function DRIVE_getCustomerFinal(){
+	global $ch;
+
+	// #1 - get Order By Id
+	$url = backendUrl . '/SearchWS/QueryAsEntities';
+
+
+	$params =  array('itemQuery' => '{
+								  "entityName": "Cl",
+								  "distinct": false,
+								  "lazyLoaded": false,
+								  "SelectItems": [],
+								  "filterItems": [
+									{
+									  "filterItem": "clivd",
+									  "valueItem": true,
+									  "comparison": 0,
+									  "groupItem": 0
+									}
+								  ],
+								  "orderByItems": [],
+								  "JoinEntities": [],
+								  "groupByItems": []
+								}');
+
+
+
+
+
+	$response=DRIVE_Request($ch, $url, $params);
+
+	if(empty($response)){
+		return false;
+	} else if(count($response['result']) == 0 ){
+		return null;
+	}
+
+    return $response['result'][0];
+}
+
 
 //Call Drive to return a costumer with ncont
 function DRIVE_getCustomerByNcont($ncont){
@@ -684,6 +737,41 @@ function logData($data){
 	// Write the contents back to the file
 	file_put_contents($file, $current);
 
+}
+
+function validaNIF($nif, $ignoreFirst=true) {
+	//Limpamos eventuais espaços a mais
+	$nif=trim($nif);
+	//Verificamos se é numérico e tem comprimento 9
+	if (!is_numeric($nif) || strlen($nif)!=9) {
+		return false;
+	} else {
+		$nifSplit=str_split($nif);
+		//O primeiro digíto tem de ser 1, 2, 5, 6, 8 ou 9
+		//Ou não, se optarmos por ignorar esta "regra"
+		if (
+			in_array($nifSplit[0], array(1, 2, 5, 6, 8, 9))
+			||
+			$ignoreFirst
+		) {
+			//Calculamos o dígito de controlo
+			$checkDigit=0;
+			for($i=0; $i<8; $i++) {
+				$checkDigit+=$nifSplit[$i]*(10-$i-1);
+			}
+			$checkDigit=11-($checkDigit % 11);
+			//Se der 10 então o dígito de controlo tem de ser 0
+			if($checkDigit>=10) $checkDigit=0;
+			//Comparamos com o último dígito
+			if ($checkDigit==$nifSplit[8]) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
 }
 
 ?>

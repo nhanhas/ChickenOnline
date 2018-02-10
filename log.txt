@@ -257,3 +257,87 @@ Starting Sync...<br>
 
 ----------------------2018-01-28 13:28:36----------------------
 Order with Id = 417861 - synched with SUCCESS. Request to print...<br>
+
+----------------------2018-01-28 13:34:57----------------------
+Starting Sync...<br>
+
+----------------------2018-01-28 13:34:57----------------------
+> Orders received to Sync: <br>[{"orderId":417861,"customer":{"name":"Jo\u00e3o Leite","email":"joao.oleite@hotmail.com","nif":"256054266","zipcode":null,"phone":null,"phone2":null,"address":" ","city":null,"userId":"155614"},"products":[{"ref":"011","design":"\u00c1gua 0.5L","epv":1.5,"qtt":1,"ivaincl":true},{"ref":"","design":"Taxa 2,50Eur","epv":2.5,"qtt":1,"ivaincl":true}]}] <br><br>
+
+----------------------2018-01-28 13:34:58----------------------
+Order with Id = 417861 - synched with SUCCESS. Request to print...<br>
+
+----------------------2018-01-28 13:35:03----------------------
+Document printed!.<br><br>
+
+----------------------2018-01-28 14:23:56----------------------
+Starting Sync...<br>
+
+----------------------2018-01-28 14:23:56----------------------
+> Orders received to Sync: <br>[{"orderId":417861,"customer":{"name":"Jo\u00e3o Leite","email":"joao.oleite@hotmail.com","nif":"256054266","zipcode":null,"phone":null,"phone2":null,"address":" ","city":null,"userId":"155614"},"products":[{"ref":"011","design":"\u00c1gua 0.5L","epv":1.5,"qtt":1,"ivaincl":true},{"ref":"","design":"Taxa 2,50Eur","epv":2.5,"qtt":1,"ivaincl":true}]}] <br><br>
+
+----------------------2018-01-28 14:23:56----------------------
+Order with Id = 417861 - Already created, request to Print...<br>
+
+----------------------2018-01-28 14:24:01----------------------
+Document printed!.<br><br>
+
+----------------------2018-01-28 14:44:49----------------------
+Starting Sync...<br>
+
+----------------------2018-01-28 14:44:49----------------------
+> Orders received to Sync: <br>[{"orderId":417861,"customer":{"name":"Jo\u00e3o Leite","email":"joao.oleite@hotmail.com","nif":"256054266","zipcode":null,"phone":null,"phone2":null,"address":" ","city":null,"userId":"155614"},"products":[{"ref":"011","design":"\u00c1gua 0.5L","epv":1.5,"qtt":1,"ivaincl":true},{"ref":"","design":"Taxa 2,50Eur","epv":2.5,"qtt":1,"ivaincl":true}]}] <br><br>
+
+----------------------2018-01-28 14:44:50----------------------
+Order with Id = 417861 - synched with SUCCESS. Request to print...<br>
+
+----------------------2018-01-28 14:46:08----------------------
+Starting Sync...<br>
+
+----------------------2018-01-28 14:46:08----------------------
+> Orders received to Sync: <br>[{"orderId":417861,"customer":{"name":"Jo\u00e3o Leite","email":"joao.oleite@hotmail.com","nif":"412412412414141","zipcode":null,"phone":null,"phone2":null,"address":" ","city":null,"userId":"155614"},"products":[{"ref":"011","design":"\u00c1gua 0.5L","epv":1.5,"qtt":1,"ivaincl":true},{"ref":"","design":"Taxa 2,50Eur","epv":2.5,"qtt":1,"ivaincl":true}]}] <br><br>
+
+----------------------2018-01-28 14:46:09----------------------
+Order with Id = 417861 - synched with SUCCESS. Request to print...<br>
+
+----------------------2018-01-28 14:46:42----------------------
+Starting Sync...<br>
+
+----------------------2018-01-28 14:46:42----------------------
+> Orders received to Sync: <br>[{"orderId":417861,"customer":{"name":"Jo\u00e3o Leite","email":"joao.oleite@hotmail.com","nif":"123456789","zipcode":null,"phone":null,"phone2":null,"address":" ","city":null,"userId":"155614"},"products":[{"ref":"011","design":"\u00c1gua 0.5L","epv":1.5,"qtt":1,"ivaincl":true},{"ref":"","design":"Taxa 2,50Eur","epv":2.5,"qtt":1,"ivaincl":true}]}] <br><br>
+
+----------------------2018-01-28 14:46:43----------------------
+Customer created with number = 4 <br><br>
+
+----------------------2018-01-28 14:46:44----------------------
+Order with Id = 417861 - synched with SUCCESS. Request to print...<br>
+
+----------------------2018-01-28 14:47:05----------------------
+Starting Sync...<br>
+
+----------------------2018-01-28 14:47:06----------------------
+> Orders received to Sync: <br>[{"orderId":417861,"customer":{"name":"Jo\u00e3o Leite","email":"joao.oleite@hotmail.com","nif":"1234567843242349","zipcode":null,"phone":null,"phone2":null,"address":" ","city":null,"userId":"155614"},"products":[{"ref":"011","design":"\u00c1gua 0.5L","epv":1.5,"qtt":1,"ivaincl":true},{"ref":"","design":"Taxa 2,50Eur","epv":2.5,"qtt":1,"ivaincl":true}]}] <br><br>
+
+----------------------2018-01-28 14:47:06----------------------
+Order with Id = 417861 - synched with SUCCESS. Request to print...<br>
+
+----------------------2018-01-28 14:47:59----------------------
+Starting Sync...<br>
+
+----------------------2018-01-28 14:47:59----------------------
+> Orders received to Sync: <br>[{"orderId":417861,"customer":{"name":"Jo\u00e3o Leite","email":"joao.oleite@hotmail.com","nif":"","zipcode":null,"phone":null,"phone2":null,"address":" ","city":null,"userId":"155614"},"products":[{"ref":"011","design":"\u00c1gua 0.5L","epv":1.5,"qtt":1,"ivaincl":true},{"ref":"","design":"Taxa 2,50Eur","epv":2.5,"qtt":1,"ivaincl":true}]}] <br><br>
+
+----------------------2018-01-28 14:47:59----------------------
+Order with Id = 417861 - Already created, request to Print...<br>
+
+----------------------2018-01-28 14:48:07----------------------
+Document printed!.<br><br>
+
+----------------------2018-01-28 14:48:36----------------------
+Starting Sync...<br>
+
+----------------------2018-01-28 14:48:37----------------------
+> Orders received to Sync: <br>[{"orderId":417861,"customer":{"name":"Jo\u00e3o Leite","email":"joao.oleite@hotmail.com","nif":"","zipcode":null,"phone":null,"phone2":null,"address":" ","city":null,"userId":"155614"},"products":[{"ref":"011","design":"\u00c1gua 0.5L","epv":1.5,"qtt":1,"ivaincl":true},{"ref":"","design":"Taxa 2,50Eur","epv":2.5,"qtt":1,"ivaincl":true}]}] <br><br>
+
+----------------------2018-01-28 14:48:37----------------------
+Order with Id = 417861 - synched with SUCCESS. Request to print...<br>
